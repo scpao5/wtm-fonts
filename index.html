@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="theme-color" content="#0d1117">
+<title>战争雷霆手游 · 字体研究</title>
+<style>
+@font-face{font-family:'WT';src:url('fonts/symbols_skyquake.woff2') format('woff2');font-display:block;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:#0d1117;color:#e6edf3;
+  font:15px/1.6 system-ui,-apple-system,"PingFang SC",sans-serif;
+  min-height:100vh;display:flex;flex-direction:column}
+.wrap{max-width:720px;width:100%;margin:0 auto;padding:38px 18px 40px;flex:1}
+.hero{text-align:center;margin-bottom:34px}
+.hero h1{margin:0 0 8px;font-size:23px;font-weight:600;letter-spacing:.3px}
+.hero p{margin:0;color:#8b949e;font-size:13px}
+.badge{display:inline-block;margin-top:14px;padding:5px 13px;border-radius:20px;
+  background:#161b22;border:1px solid #30363d;font-size:12px;color:#8b949e}
+.badge b{color:#58a6ff;font-weight:600}
+
+.cards{display:grid;gap:12px}
+.card{display:flex;align-items:center;gap:15px;padding:18px;border-radius:12px;
+  background:#161b22;border:1px solid #30363d;text-decoration:none;color:inherit;
+  transition:.15s ease}
+.card:active{transform:scale(.985);background:#1c2128;border-color:#58a6ff}
+.ico{flex:0 0 46px;height:46px;border-radius:11px;display:flex;align-items:center;
+  justify-content:center;font-size:24px;background:#0d1117;border:1px solid #21262d;
+  font-family:'WT',sans-serif;color:#c9d1d9;line-height:1}
+.txt{flex:1;min-width:0}
+.txt b{display:block;font-size:15px;font-weight:600;margin-bottom:3px}
+.txt span{display:block;font-size:12px;color:#7d8590;line-height:1.45}
+.arrow{flex:0 0 auto;color:#484f58;font-size:18px}
+
+.foot{text-align:center;margin-top:34px;font-size:11px;color:#484f58;line-height:1.9}
+.foot a{color:#58a6ff;text-decoration:none}
+@media(max-width:380px){.wrap{padding:26px 14px}.hero h1{font-size:20px}}
+</style></head><body>
+<div class="wrap">
+  <div class="hero">
+    <h1>战争雷霆手游 · 字体研究</h1>
+    <p>War Thunder Mobile Fonts</p>
+    <div class="badge">累计访问次数：<b id="hitn">—</b> 次</div>
+  </div>
+
+  <div class="cards">
+    <a class="card" href="symbols.html">
+      <div class="ico">⌛</div>
+      <div class="txt">
+        <b>符号字符表</b>
+        <span>浏览游戏内符号，单击复制 · 双击拼装</span>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="card" href="mdview.html">
+      <div class="ico">┐</div>
+      <div class="txt">
+        <b>项目说明</b>
+        <span>研究背景、符号对照表与技术要点</span>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="card" href="https://github.com/scpao5/wtm-fonts" target="_blank" rel="noopener">
+      <div class="ico">✭</div>
+      <div class="txt">
+        <b>源码仓库</b>
+        <span>GitHub · AGPL-3.0</span>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+  </div>
+
+  <div class="foot">
+    字体资源版权归 Gaijin Entertainment 所有<br>
+    仅作技术研究与文字交流参考
+  </div>
+</div>
+<script>
+fetch('/api/count',{cache:'no-store'})
+  .then(r=>r.ok?r.json():Promise.reject())
+  .then(d=>{ if(d&&typeof d.count==='number') document.getElementById('hitn').textContent=d.count.toLocaleString(); })
+  .catch(()=>{ const e=document.getElementById('hitn'); if(e){e.parentNode.style.display='none';} });
+</script>
+</body></html>
